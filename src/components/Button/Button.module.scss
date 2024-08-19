@@ -1,0 +1,26 @@
+.buttonStyles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-height: 50px;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.hoverStyles {
+  &:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+    transition-duration: 0.3s;
+  }
+}

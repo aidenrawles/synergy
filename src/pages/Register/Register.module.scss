@@ -1,0 +1,112 @@
+@import '../../styles/styles.scss';
+
+h1 {
+  color: var(--dark-purple);
+  font-weight: bold;
+}
+
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    margin-left: $xs-spacing;
+
+    .logo {
+      padding: 4px;
+    }
+  }
+
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 500px;
+
+    .registerHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: $xl-spacing;
+
+      .role {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        max-height: 50px;
+        background-color: var(--light-purple);
+        color: var(--primary-purple);
+      }
+    }
+
+    .split {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: $xs-spacing;
+    }
+    .inputGroup {
+      padding-bottom: 12px;
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        border: 1px solid var(--secondary-purple);
+        border-radius: 4px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .courseInfo {
+      padding: 12px 0;
+    }
+
+    .submitButton {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-purple);
+      color: var(--base-white);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--secondary-purple);
+        transition-duration: 0.3s;
+      }
+    }
+
+    .error {
+      color: var(--primary-red);
+    }
+  }
+
+  .loginLink {
+    text-align: center;
+
+    a {
+      color: var(--primary-purple);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

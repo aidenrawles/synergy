@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+:root {
+  --font-mono: Inter, ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    scroll-behavior: smooth;
+    
+  html, body {
+    font-family: var(--font-mono);
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+  
+  --base-black: #000000;
+  --base-white: #FFFFFF;
+  --off-white: #f3f1eb;
+  --off-black: #22282b;
+
+  // Use for headings
+  --dark-purple: #0D062D;
+  // Use for subheadings
+  --dark-gray: #787486;
+  --medium-gray: #9696A5;
+
+  // Use for panels
+  --light-gray: #F5F5F5;
+
+  // Main colours
+  --primary-purple: #5030E5;
+  --secondary-purple: #9683EF;
+  --light-purple: #E8E6F4;
+  --lighter-purple: #F1EFFD;
+
+  // Tag colours, supplementary colours
+  --primary-yellow: #D58D49;
+  --light-yellow: #F1E6DB;
+
+  --primary-red: #DE3535;
+  --light-red: #EFBCBC;
+
+  --primary-green: #3A974C;
+  --light-green: #D6E7D5;
+
+  --primary-blue: #76A5EA;
+  --light-blue: #C8D8F1;
+
+  [data-theme="light"] {
+    --bg-default: var(--base-white);
+    --frg-heading: var(--dark-purple);
+  }
+}

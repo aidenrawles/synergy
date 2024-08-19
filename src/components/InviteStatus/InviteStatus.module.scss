@@ -1,0 +1,101 @@
+@import '../../styles/styles.scss';
+
+.inviteStatusWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 24px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 48px;
+    margin: 0;
+
+    > h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+  }
+
+  .lineBreaker {
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-purple);
+    margin: 6px 0;
+    border: none;
+  }
+
+  .rowNames {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(30%, 1fr));
+
+    @include media-down(large-tablet) {
+      grid-template-columns: repeat(3, minmax(42%, 1fr)) !important;
+      > .userHeading {
+        display: none;
+      }
+    }
+
+    > h3 {
+      margin: 16px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark-gray);
+    }
+  }
+}
+
+.inviteeInfo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(30%, 1fr));
+  align-items: center;
+  // gap: 48px;
+
+  @include media-down(large-tablet) {
+    grid-template-columns: repeat(3, minmax(42%, 1fr)) !important;
+  }
+
+  .user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    @include media-down(large-tablet) {
+      display: none;
+    }
+  }
+
+  h4 {
+    font-weight: 400;
+  }
+}
+
+.pendingTag,
+.acceptedTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 96px;
+  max-height: 36px;
+  padding: 8px 8px;
+  border-radius: 5px;
+}
+
+.pendingTag {
+  background-color: var(--light-yellow);
+  color: var(--primary-yellow);
+}
+
+.acceptedTag {
+  background-color: var(--light-green);
+  color: var(--primary-green);
+}
+
+.noInvitesDisclaimer {
+  font-weight: 500;
+  text-align: center;
+}

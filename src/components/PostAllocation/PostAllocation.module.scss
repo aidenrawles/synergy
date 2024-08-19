@@ -1,0 +1,63 @@
+@import '../../styles/styles.scss';
+
+.allocations {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .confirmAllocation {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .confirmButton {
+      color: var(--base-white);
+      background-color: var(--primary-red);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .lockedButton {
+      color: var(--primary-green);
+      background-color: var(--light-green);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .warning {
+      color: var(--primary-red);
+    }
+  }
+}
+
+.allocationSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @include media-up('desktop') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-up('large-desktop') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .groupCard {
+    position: relative;
+    padding: 24px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    max-height: 320px;
+    cursor: pointer;
+
+    h2 {
+      margin: 8px 0;
+    }
+  }
+}
+
+.courseTag {
+  position: absolute;
+  right: 24px;
+}

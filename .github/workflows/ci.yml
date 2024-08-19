@@ -1,0 +1,69 @@
+name: Update database types and Lint/Build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  update-types:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PROJECT_REF: ${{ secrets.SUPABASE_REF_ID }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update types
+        run: npx supabase gen types --lang=typescript --project-id "$PROJECT_REF" > src/types/database-generated.ts
+
+      - name: Add ESLint disable comment
+        run: echo '/* eslint-disable @typescript-eslint/no-redundant-type-constituents */' | cat - src/types/database-generated.ts > temp && mv temp src/types/database-generated.ts
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'SupaBot'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit changes
+        run: |
+          git add src/types/database-generated.ts
+          git commit -m 'Automatic update database types' || echo "No changes to commit"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  lint-and-build:
+    runs-on: ubuntu-latest
+    needs: update-types
+    strategy:
+      matrix:
+        node-version: [18.x] # Use Node.js 18.x for consistency with Dockerfile
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint:actions
+
+      - name: Run build
+        run: npm run build

@@ -1,0 +1,24 @@
+@import '../../styles/styles.scss';
+.searchBarContainer {
+  width: 100%;
+  max-width: 620px;
+  margin: 1rem 0;
+}
+
+.searchInput {
+  width: 100%;
+
+  :global(.MuiOutlinedInput-root) {
+    fieldset {
+      border-color: var(--primary-purple);
+    }
+
+    &:hover fieldset {
+      border-color: var(--primary-purple);
+    }
+
+    &.Mui-focused fieldset {
+      border-color: var(--primary-purple);
+    }
+  }
+}

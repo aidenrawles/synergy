@@ -1,0 +1,52 @@
+@import '../../styles/styles.scss';
+
+.container {
+    padding-top: $xs-spacing;
+
+    .tagContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 4px;
+
+        .tags {
+            display: flex;
+            flex-grow: 1;
+            .index {
+                 display: flex; 
+                justify-content: center;
+                align-items: center;
+                line-height: initial; 
+                border-radius: 50%; 
+                width: $xs-spacing;
+                height: $xs-spacing;
+                background-color: var(--light-gray);
+                margin-top: 4px;
+                span {
+                    color: var(--dark-purple);
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+            }
+
+            .tag {
+                padding-left: $xs-spacing;
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .ratings {
+        display: flex;
+        flex-direction: row;
+        .ratingNumber {
+            display: flex;
+            align-items: center;
+            .ratingValue {
+                color: var(--primary-purple);
+                margin-right: 2px;
+                font-weight: bold;
+            }
+        }
+    }
+}

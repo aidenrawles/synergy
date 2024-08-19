@@ -1,0 +1,37 @@
+@import '../../styles/styles.scss';
+
+.sectionWrapper {
+  margin: 4% 20%;
+  margin-top: 160px !important;
+}
+
+.header {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.subHeader {
+  font-size: 1.3rem;
+  font-weight: 450;
+  color: var(--medium-gray);
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 16px;
+
+  * {
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
+
+  .sendAndCancelButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+

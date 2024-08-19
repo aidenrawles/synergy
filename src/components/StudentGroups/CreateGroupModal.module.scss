@@ -1,0 +1,46 @@
+@import '../../styles/styles.scss';
+
+.createForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  background-color: var(--base-white);
+  border: 2px solid var(--dark-purple);
+  box-shadow: 24px;
+  padding: $m-spacing;
+  overflow-y: auto;
+  border-radius: 8px;
+
+  .closeButton {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: var(--dark-purple);
+  }
+
+  .title {
+    margin-bottom: $xs-spacing;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--dark-purple);
+    margin: 0 0 4px;
+    font-family: var(--font-mono);
+  }
+
+  .formSubmit {
+    display: flex;
+    justify-content: flex-end;
+
+    .submitButton {
+      background-color: var(--light-purple);
+      color: var(--primary-purple);
+      font-size: 1rem;
+    }
+  }
+}

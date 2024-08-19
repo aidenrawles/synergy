@@ -1,0 +1,77 @@
+@import '../../styles/styles.scss';
+
+.projectForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  background-color: var(--base-white);
+  border: 2px solid var(--dark-purple);
+  box-shadow: 24px;
+  padding: $m-spacing;
+  overflow-y: auto;
+  border-radius: 8px;
+
+  .closeButton {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: var(--dark-purple);
+  }
+
+  .projectHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      h1 {
+        font-size: 2rem;
+        color: var(--dark-purple);
+        margin: 0;
+        font-family: var(--font-mono);
+      }
+    }
+  }
+
+  .tags {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $s-spacing;
+
+    .labelField {
+      label {
+        font-size: larger;
+        font-weight: bold;
+        color: var(--dark-purple);
+        font-family: var(--font-mono);
+      }
+      padding-bottom: 8px;
+    }
+
+    .desc {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      p {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--dark-gray);
+      }
+    }
+  }
+
+  .projectTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

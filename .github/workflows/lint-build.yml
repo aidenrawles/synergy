@@ -1,0 +1,31 @@
+name: Lint and Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x] # Use Node.js 18.x for consistency with Dockerfile
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run lint
+      run: npm run lint:actions
+
+    - name: Run build
+      run: npm run build

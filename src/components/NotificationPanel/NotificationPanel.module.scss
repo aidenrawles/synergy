@@ -1,0 +1,123 @@
+.notificationPanel {
+  position: fixed;
+  top: 110px;
+  right: -450px;
+  width: 320px;
+  max-height: calc(100%);
+  min-height: calc(100%);
+  overflow-y: auto;
+  background: var(--base-white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: 8px;
+}
+
+.notificationPanelVisible {
+  right: 0;
+}
+
+.panelHeader {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+
+  .headerButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .filterButtons {
+      display: flex;
+      gap: 8px;
+      .filterButton {
+        padding: 4px 8px 4px 8px;
+        font-size: 1rem;
+      }
+    }
+
+    .actionButton {
+      padding: 4px;
+    }
+  }
+
+  .lineBreaker {
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-purple);
+    margin: 8px 0 12px 0;
+    border: none;
+  }
+}
+
+.notificationBody {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 8px 8px;
+  min-height: calc(100% - 110px);
+  gap: 8px;
+
+  .notificationCard {
+    padding: 8px;
+    background-color: var(--light-gray);
+    height: 72px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .cardContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+
+      .notificationText {
+        font-size: 0.85rem;
+        font-weight: 600;
+
+        > p {
+          margin: 0 !important;
+        }
+      }
+
+      .notificationDate {
+        color: var(--dark-gray);
+        font-weight: 500;
+        font-size: 0.75rem;
+
+        > p {
+          margin: 0 !important;
+        }
+      }
+    }
+
+    &:hover {
+      filter: brightness(90%);
+      transition-duration: 0.3s;
+    }
+
+    .readMarker {
+      border: solid;
+      border-color: var(--primary-purple);
+      border-radius: 4px;
+      border-width: 4px;
+      margin-bottom: 60px;
+    }
+
+    .closeMarker {
+      margin: 0;
+      padding: 0;
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  .noNotifications {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

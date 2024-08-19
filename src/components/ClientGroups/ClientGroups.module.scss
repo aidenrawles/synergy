@@ -1,0 +1,67 @@
+@import '../../styles/styles.scss';
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 12px;
+
+  .header {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  .allReportButton {
+    padding: 4px 4px;
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.projectHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  .projectHeader {
+    margin-bottom: 24px;
+  }
+
+  .singleReportButton {
+    padding: 4px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.groupSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @include media-up('desktop') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-up('large-desktop') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .groupCard {
+    padding: 24px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    max-height: 320px;
+  }
+}

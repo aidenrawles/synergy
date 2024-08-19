@@ -1,0 +1,19 @@
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20vh;
+
+  > * {
+    margin: 0;
+    text-align: center;
+
+    span {
+      color: var(--primary-purple);
+    }
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+}

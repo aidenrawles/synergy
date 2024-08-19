@@ -1,0 +1,15 @@
+@import '../styles.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  scroll-behavior: smooth;
+  
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.card {
+  background-color: var(--bg-default);
+}

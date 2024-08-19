@@ -1,0 +1,86 @@
+@import '../../styles/styles.scss';
+
+.groupsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+
+  @include media-up('desktop') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-up('large-desktop') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .groupCard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 24px;
+    padding-bottom: 100px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    height: 320px;
+
+    h1 {
+      margin-bottom: 16px;
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .descContainer {
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    .desc {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 52px; // set above container offset
+      color: var(--medium-gray);
+      font-weight: 500;
+      margin: 0;
+      margin-bottom: 8px;
+
+      span {
+        color: var(--dark-gray);
+        font-weight: 500;
+      }
+    }
+
+    .memberAvatarContainer {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      height: 32px;
+    }
+  }
+}
+
+.btnContainer {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  .btn {
+    z-index: 2;
+    padding: 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

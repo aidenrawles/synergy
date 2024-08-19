@@ -1,0 +1,70 @@
+@import '../../styles/styles.scss';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding-right:30px;
+  padding-left:10px;
+  padding-top:10px;
+
+  > h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding-bottom:13px;
+    padding-top:13px;
+  }
+}
+
+.rowNames {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding-left:30px;
+
+  > h3 {
+    margin: 16px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+  }
+}
+
+.memberRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 48px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left:30px;
+  padding-right:30px;
+
+  .memberInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  h4 {
+    font-weight: 600;
+  }
+}
+
+.addMemberSection {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  padding-left:50px;
+  padding-right:10px;
+}
+
+.memberButtonWrapper {
+  width:185px;
+  font-size:1rem;
+  font-weight:600
+}

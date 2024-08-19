@@ -1,0 +1,230 @@
+@import '../../styles/styles.scss';
+
+.date {
+  font-weight: 500;
+  color: var(--medium-gray);
+  margin: 0;
+}
+
+.header {
+  font-size: 4rem;
+  margin: 0 0 32px 0;
+}
+
+.boxesContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.largeBox {
+  width: 60%;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 24px;
+
+  @include media-down(large-tablet) {
+    width: 100vw !important;
+  }
+}
+
+.sectionHeader {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.lineBreaker {
+  width: 100%;
+  height: 5px;
+  background-color: var(--primary-purple);
+  margin: 6px 0;
+  border: none;
+}
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0;
+  width: 100%;
+
+  .projAllocation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.taskColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskColumnRight {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.secondaryButton {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.primaryButton {
+  display: flex;
+}
+
+.taskTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.taskSubheading {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  text-align: left;
+}
+.buttonContainer {
+  grid-column: 2 / span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.runFetchClassButton {
+  background-color: var(--primary-purple);
+  color: var(--base-white);
+  justify-content: center;
+  align-items: center;
+  min-width: 180px;
+  min-height: 50px;
+  flex: 1;
+}
+
+.generateReportButton {
+  background-color: var(--light-purple);
+  color: var(--primary-purple);
+  flex: 1;
+}
+
+.runButtonWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.runButton {
+  background-color: var(--primary-green);
+  color: var(--base-white);
+  flex: 1;
+  // Need this or else when running loading it shrinks the button
+  min-width: 80px;
+  min-height: 50px;
+}
+
+.lockedButton {
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  flex: 1;
+  min-width: 80px;
+  min-height: 50px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.smallBox {
+  width: 20%;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 24px;
+  margin-left: 12px;
+  
+  @include media-down(large-tablet) {
+    display: none;
+  }
+}
+
+.groupIconWrapper {
+  width: 50px;
+  height: 50px;
+  background-color: var(--light-purple);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.groupIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.viewAllGroups {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: default;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+  }
+}
+.smallBox:last-child .viewAllGroups {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.boxContent {
+  color: var(--primary-black);
+
+  p {
+    font-size: x-small;
+    color: var(--dark-gray);
+  }
+
+  &.complete {
+    color: var(--primary-green);
+  }
+
+  &.incomplete {
+    color: var(--primary-red);
+  }
+
+  &.pending {
+    color: var(--primary-purple);
+  }
+
+  &.confirmed {
+    color: var(--primary-yellow);
+  }
+}
+
+.loaderOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

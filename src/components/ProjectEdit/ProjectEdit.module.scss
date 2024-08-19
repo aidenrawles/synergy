@@ -1,0 +1,93 @@
+@import '../../styles/styles.scss';
+
+.projectForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 160px !important;
+
+  .projectHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--dark-purple);
+      margin: 0;
+    }
+
+    input {
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: var(--light-gray);
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--dark-purple);
+      outline: none;
+    }
+  }
+
+  .tags {
+    display: flex;
+    justify-content: space-between;
+    padding: $xs-spacing 0 0;
+
+    .labelField {
+      label {
+        font-size: larger;
+        font-weight: bold;
+        color: var(--dark-purple);
+      }
+      padding-bottom: 8px;
+    }
+
+    .capacity {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ratings {
+      flex-grow: 0.1;
+      align-items: center;
+      border-radius: 4px;
+      max-width: 450px;
+    }
+  }
+
+  .formActions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $xs-spacing;
+
+    button {
+      padding: 12px $xs-spacing;
+      border: none;
+      background: var(--primary-purple);
+      color: var(--base-white);
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:focus {
+        background: var(--secondary-purple);
+      }
+
+      &:nth-child(2) {
+        background: var(--primary-red);
+
+        &:focus {
+          background: var(--light-red);
+        }
+      }
+    }
+  }
+}

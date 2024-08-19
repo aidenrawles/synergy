@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "cheerio": "https://cdn.skypack.dev/cheerio",
+    "@supabase/supabase-js": "https://cdn.skypack.dev/@supabase/supabase-js"
+  }
+}

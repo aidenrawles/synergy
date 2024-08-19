@@ -1,0 +1,10 @@
+
+// Styles across components
+@import "./base/media.scss";
+@import "./base/variables.scss";
+@import "./base/mixins.scss";
+
+.main { 
+  margin: 0 !important;
+  scroll-behavior: smooth;
+}

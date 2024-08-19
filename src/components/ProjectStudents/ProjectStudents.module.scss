@@ -1,0 +1,113 @@
+@import '../../styles/globals.scss';
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/media.scss';
+
+$primary-color: var(--primary-red);
+$text-color: var(--dark-purple);
+$box-color: var(--light-gray);
+
+.header {
+  font-size: 4rem;
+  margin: 0 0 32px 0;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  grid-auto-rows: 1fr;
+
+  @include media-up('desktop') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-up('large-desktop') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media-down(tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectCard {
+  padding: 24px;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 450px; // fixed height for all cards
+  height: 100%;
+  cursor: default;
+
+  .projectTags {
+    display: flex;
+    flex-wrap: wrap; // Allow tags to wrap
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    height: 1.8em;
+  }
+
+  h3 {
+    color: var(--medium-gray);
+    font-weight: 500;
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    height: 2.6em;
+  }
+
+  p {
+    font-weight: 500;
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.4;
+    height: 5.6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  .dropdownContainer {
+    margin-top: 16px;
+  }
+}
+
+.projectSection {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.successMessage {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  // Changed to match client dashboard
+  &:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+    transition-duration: 0.3s;
+  }
+}

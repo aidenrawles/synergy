@@ -1,0 +1,73 @@
+@import '../../styles/styles.scss';
+
+.uploadModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  max-height: 90vh;
+  background-color: var(--base-white);
+  border: 2px solid var(--dark-purple);
+  box-shadow: 24px;
+  padding: $s-spacing;
+  overflow-y: auto;
+  border-radius: 8px;
+
+  .closeButton {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: var(--dark-purple);
+  }
+
+  .contentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header {
+    width: 100%;
+
+    h1 {
+      font-size: 2rem;
+      color: var(--dark-purple);
+      margin: 0;
+      font-family: var(--font-mono);
+    }
+  }
+
+  .description {
+    p {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--dark-gray);
+    }
+  }
+
+  .uploadFile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      color: var(--primary-purple);
+      font-size: 0.75rem;
+    }
+
+    .uploadButton {
+      background-color: var(--light-purple);
+      color: var(--primary-purple);
+      padding: 8px;
+    }
+  }
+
+    .saveButton {
+      background-color: var(--primary-purple);
+      color: var(--base-white);
+      padding: 8px;
+    }
+}

@@ -1,0 +1,176 @@
+@import '../../styles/styles.scss';
+
+p {
+  margin: 0;
+  color: var(--dark-purple);
+}
+
+.userProfileContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 160px !important;
+
+  .userDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding-left: $xs-spacing;
+    padding-bottom: $xs-spacing;
+
+    .userDisplayContent {
+      display: flex;
+      flex-direction: column;
+      padding-left: $xs-spacing;
+      padding-bottom: $xs-spacing;
+
+      .userName {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .linkButton {
+        padding: 4px;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 60px;
+        padding-right: 8px;
+      }
+
+      h3 {
+        font-size: 20px;
+        color: var(--dark-gray);
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  }
+
+  .userCardDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card {
+      background-color: var(--light-gray);
+      height: 400px;
+      width: 325px;
+      padding: $xs-spacing;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: $xs-spacing;
+      border-radius: 12px;
+      box-sizing: border-box;
+
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .downloadButton {
+          padding: 6px;
+          margin-top: 12px;
+          img {
+            width: 24px;
+            height: 24px;
+            margin: 0;
+          }
+        }
+      }
+
+      .lineBreaker {
+        width: 100%;
+        height: 4px;
+        background-color: var(--primary-purple);
+        margin: 8px 0 12px 0;
+        border: none;
+      }
+
+      h1 {
+        color: var(--dark-purple);
+        margin: 0;
+        padding-top: 20px;
+        font-size: xx-large;
+      }
+
+      img {
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .entry {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding-bottom: 4px;
+
+        .entryValue {
+          color: var(--primary-purple);
+          padding-left: 4px;
+          font-weight: bold;
+        }
+
+        .icon {
+          display: flex;
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+
+      .ratings {
+        display: flex;
+        flex-direction: row;
+        padding-top: 4px;
+        padding-bottom: 12px;
+
+        .ratingNumber {
+          display: flex;
+          align-items: center;
+
+          .index {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: initial;
+            border-radius: 50%;
+            width: $xs-spacing;
+            height: $xs-spacing;
+            background-color: #dbdbdb;
+
+            span {
+              color: var(--dark-gray);
+              padding-left: 0;
+              margin-left: 0;
+            }
+          }
+
+          .tag {
+            padding-left: 12px;
+            padding-right: 4px;
+            flex-grow: 1;
+          }
+
+          .ratingValue {
+            color: var(--primary-purple);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.roleSelect {
+  margin-top: 1rem;
+  width: 100%;
+}

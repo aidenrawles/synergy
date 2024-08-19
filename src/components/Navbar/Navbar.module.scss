@@ -1,0 +1,142 @@
+@import '../../styles/styles.scss';
+
+.navWrapper {
+  position: relative;
+}
+
+.navSection {
+  margin-bottom: 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--light-gray);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 24px;
+  width: calc(100vw - 48px);
+  height: 110px;
+  box-sizing: border-box;
+  background-color: var(--base-white);
+}
+
+.navLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  .synergyLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    margin-right: 16px;
+
+    @include media-down(large-tablet) {
+      img {
+
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+      }
+      gap: 2px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include media-down(large-tablet) {
+      h1 {
+        display: none;
+      }
+    }
+
+    @include media-down(small-tablet) {
+      img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+    margin-top: 8px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+
+    @include media-down(large-tablet) {
+      font-size: 1.1rem;
+      padding: 4px 12px;
+    }
+
+    @include media-down(small-tablet) {
+      font-size: 1rem;
+      padding: 4px 8px;
+    }
+
+    @include media-down(large-tablet) {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--light-purple);
+      color: var(--primary-purple);
+      transition-duration: 0.3s;
+    }
+
+    &.activeTab {
+      background-color: var(--light-purple);
+      color: var(--primary-purple);
+      pointer-events: none;
+    }
+  }
+}
+
+.navRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  .stuInfo > * {
+    text-align: right;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-weight: 700 !important;
+
+    @include media-down(tablet) {
+      font-size: 1rem;
+    }
+  }
+
+  h5 {
+    @include media-down(tablet) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.dropField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    color: var(--dark-purple);
+  }
+}

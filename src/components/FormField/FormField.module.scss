@@ -1,0 +1,50 @@
+@import '../../styles/styles.scss';
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .labelField {
+        padding: $xs-spacing 0 12px 0;
+
+        label {
+            font-size: larger;
+            font-weight: bold;
+            color: var(--dark-purple);
+            padding-right: 12px;
+        }
+    
+        button {
+            padding: 8px 12px;
+            border: none;
+            background: var(--light-gray);
+            color: var(--primary-purple);
+            border-radius: 4px;
+            cursor: pointer;
+    
+            &:hover {
+                background: var(--light-purple);
+            }
+        }
+    }
+
+    .inputField {
+        background: var(--light-gray);
+        border-radius: 4px;
+        flex: 1;
+
+        textarea {
+            border-radius: 4px;
+            padding: $xs-spacing;
+            resize: none;
+            outline: none;
+            width: 100%;
+            height: 150px;
+            border: none;
+            background: var(--light-gray);
+        }
+    }
+}
+  
